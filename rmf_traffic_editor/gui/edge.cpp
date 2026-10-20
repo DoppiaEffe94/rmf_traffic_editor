@@ -216,4 +216,5 @@ std::string Edge::mutex_group() const
   if (it == params.end() || it->second.type != Param::STRING)
     return "";
   return it->second.value_string;
+  return it->second.value_string;
 }
