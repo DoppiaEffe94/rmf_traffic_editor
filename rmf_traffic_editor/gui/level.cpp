@@ -1316,6 +1316,8 @@ void Level::draw(
     highlight_pen.setWidthF(r / 4.0);
     for (const int idx : graph_vertices)
     {
+      if (idx < 0 || idx >= static_cast<int>(vertices.size()))
+        continue;
       const Vertex& v = vertices[idx];
       if (v.mutex_group() != rendering_options.highlight_mutex_group)
         continue;
