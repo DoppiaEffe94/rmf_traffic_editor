@@ -1290,7 +1290,13 @@ void Level::draw(
       vertex_name_font,
       coordinate_system);
 
-  if (!rendering_options.highlight_mutex_group.empty())
+  const int highlight_graph = rendering_options.highlight_mutex_graph_idx;
+  const bool graph_visible =
+    highlight_graph >= 0 &&
+    highlight_graph <
+      static_cast<int>(rendering_options.show_building_lanes.size()) &&
+    rendering_options.show_building_lanes[highlight_graph];
+  if (!rendering_options.highlight_mutex_group.empty() && graph_visible)
   {
     // a waypoint belongs to a graph if a lane of that graph touches it
     std::set<int> graph_vertices;
