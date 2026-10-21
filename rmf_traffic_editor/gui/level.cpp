@@ -1294,7 +1294,7 @@ void Level::draw(
   const bool graph_visible =
     highlight_graph >= 0 &&
     highlight_graph <
-      static_cast<int>(rendering_options.show_building_lanes.size()) &&
+    static_cast<int>(rendering_options.show_building_lanes.size()) &&
     rendering_options.show_building_lanes[highlight_graph];
   if (!rendering_options.highlight_mutex_group.empty() && graph_visible)
   {
