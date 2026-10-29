@@ -24,6 +24,8 @@
 
 class MutexTable : public TableList
 {
+  Q_OBJECT
+{
 public:
   MutexTable();
   ~MutexTable();
